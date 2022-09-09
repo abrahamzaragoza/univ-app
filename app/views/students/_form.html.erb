@@ -22,7 +22,19 @@
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <%= t.submit(@student.new_record? ? "Sign Up" : "Submit changes", class: "waves-effect waves-light btn orange right") %>
+              <%= t.password_field :password, placeholder: 'Choose a password' %>
+              <%= t.label :password %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <%= t.password_field :password_confirmation, placeholder: 'Confirm your password' %>
+              <%= t.label :password_confirmation %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <%= t.button(@student.new_record? ? "Sign Up" : "Submit changes", class: "waves-effect waves-light btn orange right") %>
             </div>
           </div>
           <% end %>
