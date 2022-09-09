@@ -8,7 +8,17 @@
         <span class="card-title">
           Email: <%= @student.email %>
         </span>
-        <p>Course Enrollments: None</p>
+        <p>Course Enrollments:
+          <% if @student.courses.empty? %>
+            None
+          <% else %>
+            <ul>
+              <% @student.courses.each do |c| %>
+                <li><%= c.name %></li>
+              <% end %>
+            </ul>
+          <% end %>
+        </p>
       </div>
     </div>
     <% if current_user == @student %>
